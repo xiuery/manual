@@ -13,4 +13,5 @@ mkdocs serve
 
 # 构建
 mkdocs build
+mkdocs build --clean
 ```
