@@ -1,6 +1,8 @@
 ### [Maven](http://maven.apache.org/install.html)
 Java依赖包管理
 
+---
+
 #### Installation
 ```
 # 下载https://mirrors.tuna.tsinghua.edu.cn/apache/maven/

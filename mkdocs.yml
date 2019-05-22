@@ -2,24 +2,40 @@ site_name: xiuery
 site_url: http://www.xiuery.com
 site_author: xiuery.com
 site_description: 帮助手册
-copyright: xiuery.com
+copyright: Copyright &copy; 2015 xiuery.com
 
 repo_name: 'GitHub'
 repo_url: https://github.com/xiuery
 edit_uri: ''
 
+docs_dir: 'docs'
+site_dir: 'dist'
+
 nav:
   - Home: 'index.md'
   - Tech:
-    - BBR: bbr.md
-    - ZeroTier: zerotier.md
-    - Shadowsocks: shadowsocks.md
-    - SVN: svn.md
-    - xpath: xpath.md
-    - Maven: maven.md
-    - Nexus: nexus.md
-    - ZooKeeper: zookeeper.md
-    - RocketMQ: rocketmq.md
+    - Linux: tech/linux.md
+    - BBR: tech/bbr.md
+    - ZeroTier: tech/zerotier.md
+    - Shadowsocks: tech/shadowsocks.md
+    - Maven: tech/maven.md
+    - Nexus: tech/nexus.md
+    - Nginx: tech/nginx.md
+    - ZooKeeper: tech/zookeeper.md
+    - RocketMQ: tech/rocketmq.md
+    - RabbitMQ: tech/rabbitmq.md
+    - Svn: tech/svn.md
+    - Git: tech/git.md
+    - xpath: tech/xpath.md
+    - Restful: tech/restful.md
+    - RPC: tech/rpc.md
+  - DB:
+      - Mysql: db/mysql.md
+      - Redis: db/redis.md
+      - Mongodb: db/mongodb.md
+  - Microservice:
+      - Mesh: microservice/mesh.md
+
 
 theme:
     name: mkdocs
@@ -29,9 +45,6 @@ theme:
       - yaml
       - rust
 
-docs_dir: 'docs'
-site_dir: 'dist'
-
-
-
+extra_css:
+    - css/extra.css
 

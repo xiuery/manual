@@ -1,6 +1,8 @@
 ### [RocketMQ](http://rocketmq.apache.org/docs/quick-start/)
 消息队列
 
+---
+
 #### Installation
 ```
 # 环境要求：Maven 3.2.x并且服务器要有权限

@@ -1,6 +1,8 @@
 ### Shadowsocks
 shadowsocks代理
 
+---
+
 #### Installation
 ```
 # pip安装：https://pypi.org/project/pip/#files

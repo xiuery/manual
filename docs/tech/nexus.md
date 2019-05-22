@@ -1,5 +1,7 @@
 ### [Nexus](https://help.sonatype.com/repomanager3/)
-![nexus](images/nexus.png)
+![nexus](../images/nexus.png)
+
+---
 
 #### Installation
 ```

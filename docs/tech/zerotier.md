@@ -1,6 +1,8 @@
 ### [ZeroTier](http://www.zerotier.com/download.shtml)
 内网穿透
 
+---
+
 #### Installation
 ```
 curl -s https://install.zerotier.com/ | sudo bash
