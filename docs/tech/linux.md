@@ -12,11 +12,25 @@ passwd
 lsof -i:80
 ps -ef | grep pid#
 
+# 压缩解压
+tar -zxvf test.tar.gz
+tar -zcvf xs-manual.tar.xz xs-manual/
+tar --exclude=xs-manual/dist -zcvf xs-manual.tar.xz xs-manual/
+tar -tzvf xs-manual.tar.xz          # 列出压缩包文件
+
 # 文件查找
 sudo find / -name "*.out"
 
 # 文件上传、下载
 sudo apt-get install lrzsz
+
+# 时间戳
+date +%s
+date -d "2019-05-01 00:00:00" +%s
+
+# 截屏
+apt-get install scrot
+scrot /var/log/screen_shot/`date +%s`.png
 
 # 文件恢复
 sudo apt-get install extundelete
@@ -80,20 +94,4 @@ sudo dpkg -i libssl1.1_1.1.0g-2ubuntu4.3_amd64.deb
 # 安装内核
 # 选择内核版本https://kernel.ubuntu.com/~kernel-ppa/mainline/
 sudo dpkg -i *.deb
-```
-
-#### [Java8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-```
-# 下载解压到/usr/local：/usr/local/jdk1.8.0_211
-
-# /etc/profile.d下新建java8.sh添加以下内容
-export JAVA_HOME=/usr/local/jdk1.8.0_211
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-export PATH=$PATH:$JAVA_HOME/bin
-
-# 生效profile
-source /etc/profile
-
-# 测试
-java -version
 ```

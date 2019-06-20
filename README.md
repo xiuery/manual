@@ -15,3 +15,13 @@ mkdocs serve
 mkdocs build
 mkdocs build --clean
 ```
+
+#### Deploy
+```
+git clone https://github.com/xiuery/manual.git
+git pull
+cd manual
+mkdocs build --clean
+rm -rf /home/nginx/xs-manual/*
+mv dist/* /home/nginx/xs-manual
+```

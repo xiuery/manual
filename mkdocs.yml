@@ -29,6 +29,9 @@ nav:
     - xpath: tech/xpath.md
     - Restful: tech/restful.md
     - RPC: tech/rpc.md
+  - Java:
+    - Base: java/index.md
+    - Spring: java/spring.md
   - DB:
       - Mysql: db/mysql.md
       - Redis: db/redis.md
