@@ -24,6 +24,7 @@ sudo apt-get install libperl-dev
 yum list installed | grep pcre
 yum remove pcre
 
+yum -y install gcc-c++
 yum install -y openssl openssl-devel
 yum install -y pcre pcre-devel
 yum install -y zlib-devel
