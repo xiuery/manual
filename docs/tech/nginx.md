@@ -12,11 +12,25 @@ useradd -r -g nginx -s/sbin/nologin -d /home/nginx -M nginx
 #### 安装依赖
 ```
 dpkg -l | grep pcre
+
 sudo apt-get install openssl libssl-dev
 sudo apt-get install libpcre3 libpcre3-dev
 sudo apt-get install zlib1g-dev
 sudo apt-get install libxml2-dev libxslt-dev
 sudo apt-get install libperl-dev
+
+==============================================================
+# centos: 注意版本
+yum list installed | grep pcre
+yum remove pcre
+
+yum install -y openssl openssl-devel
+yum install -y pcre pcre-devel
+yum install -y zlib-devel
+yum install -y libxml2 libxml2-devel
+yum install -y libxslt-devel
+yum install -y perl-devel
+
 
 # 注意libperl-dev,到/usr/lib建立libperl.so软连接:
 perl -V
