@@ -198,29 +198,28 @@ log_format main '$remote_addr "$time_iso8601" "$request" $status $body_bytes_sen
 
 - json格式
 ```
-    log_format main '[$time_local] - '
-        '{'
-        '"remote_addr": "$remote_addr",'
-        '"remote_user": "$remote_user",'
-        '"time_local": "$time_local",'
-        '"http_user_agent": "$http_user_agent",'
-        '"http_x_forwarded_for": "$http_x_forwarded_for",'
-        '"http_cookie": "$http_cookie",'
-        '"http_Authorization": "$http_Authorization",'
-        '"http_token": "$http_token",'
-        '"http_referer": "$http_referer",'
-        '"upstream_addr": "$upstream_addr",'
-        '"ssl_protocol": "$ssl_protocol",'
-        '"ssl_cipher": "$ssl_cipher",'
-        '"http_host": "$http_host",'
-        '"request": "$request",'
-        '"status": "$status",'
-        '"upstream_status": "$upstream_status",'
-        '"body_bytes_sent": "$body_bytes_sent",'
-        '"request_time": "$request_time",'
-        '"upstream_response_time": "$upstream_response_time"'
-        '}';
-
+log_format main '[$time_local] - '
+    '{'
+    '"remote_addr": "$remote_addr",'
+    '"remote_user": "$remote_user",'
+    '"time_local": "$time_local",'
+    '"http_user_agent": "$http_user_agent",'
+    '"http_x_forwarded_for": "$http_x_forwarded_for",'
+    '"http_cookie": "$http_cookie",'
+    '"http_Authorization": "$http_Authorization",'
+    '"http_token": "$http_token",'
+    '"http_referer": "$http_referer",'
+    '"upstream_addr": "$upstream_addr",'
+    '"ssl_protocol": "$ssl_protocol",'
+    '"ssl_cipher": "$ssl_cipher",'
+    '"http_host": "$http_host",'
+    '"request": "$request",'
+    '"status": "$status",'
+    '"upstream_status": "$upstream_status",'
+    '"body_bytes_sent": "$body_bytes_sent",'
+    '"request_time": "$request_time",'
+    '"upstream_response_time": "$upstream_response_time"'
+    '}';
 ```
 
 - 完整参数格式
