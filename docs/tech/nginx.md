@@ -198,27 +198,29 @@ log_format main '$remote_addr "$time_iso8601" "$request" $status $body_bytes_sen
 
 - json格式
 ```
-log_format main '{'
-		'"remote_addr": "$remote_addr",'
-		'"remote_user": "$remote_user",'
-		'"time_local": "$time_local",'
-		'"http_user_agent": "$http_user_agent",'
-		'"http_x_forwarded_for": "$http_x_forwarded_for",'
-		'"http_cookie": "$http_cookie",'
-		'"http_Authorization": "$http_Authorization",'
-		'"http_token": "$http_token",'
-		'"http_referer": "$http_referer",'
-		'"upstream_addr": "$upstream_addr",'
-		'"ssl_protocol": "$ssl_protocol",'
-		'"ssl_cipher": "$ssl_cipher",'
-		'"http_host": "$http_host",'
-		'"request": "$request",'
-		'"status": "$status",'
-		'"upstream_status": "$upstream_status",'
-		'"body_bytes_sent": "$body_bytes_sent",'
-		'"request_time": "$request_time",'
-		'"upstream_response_time": "$upstream_response_time"'
-		'}';
+    log_format main '[$time_local] - '
+        '{'
+        '"remote_addr": "$remote_addr",'
+        '"remote_user": "$remote_user",'
+        '"time_local": "$time_local",'
+        '"http_user_agent": "$http_user_agent",'
+        '"http_x_forwarded_for": "$http_x_forwarded_for",'
+        '"http_cookie": "$http_cookie",'
+        '"http_Authorization": "$http_Authorization",'
+        '"http_token": "$http_token",'
+        '"http_referer": "$http_referer",'
+        '"upstream_addr": "$upstream_addr",'
+        '"ssl_protocol": "$ssl_protocol",'
+        '"ssl_cipher": "$ssl_cipher",'
+        '"http_host": "$http_host",'
+        '"request": "$request",'
+        '"status": "$status",'
+        '"upstream_status": "$upstream_status",'
+        '"body_bytes_sent": "$body_bytes_sent",'
+        '"request_time": "$request_time",'
+        '"upstream_response_time": "$upstream_response_time"'
+        '}';
+
 ```
 
 - 完整参数格式
@@ -238,4 +240,55 @@ $ssl_cipher              交换数据中的算法                               
 $upstream_addr           后台upstream的地址，即真正提供服务的主机地址    10.10.10.100:80
 $request_time            整个请求的总时间                               0.205
 $upstream_response_time  请求过程中，upstream响应时间                   0.002
+```
+
+
+#### server
+- defualt
+```
+server {
+    listen       80;
+    server_name  xiuery.com;
+
+    #charset koi8-r;
+
+    access_log  /var/log/nginx/defualt.log  main;
+
+    location / {
+        root   html;
+        index  index.html index.htm;
+    }
+
+    #error_page  404              /404.html;
+
+    # redirect server error pages to the static page /50x.html
+    #
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   html;
+    }
+}
+```
+
+- https
+```
+server {
+    listen       443 ssl;
+    server_name  xiuery.com;
+    access_log  /var/log/nginx/https.log  main;
+    
+    ssl_certificate      full_chain.pem;
+    ssl_certificate_key  private.key;
+    
+    ssl_session_cache    shared:SSL:1m;
+    ssl_session_timeout  5m;
+    
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers  on;
+    
+    location / {
+        root   html;
+        index  index.html index.htm;
+    }
+}
 ```
