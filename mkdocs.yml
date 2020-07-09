@@ -21,6 +21,7 @@ nav:
     - Maven: tech/maven.md
     - Nexus: tech/nexus.md
     - Nginx: tech/nginx.md
+    - Python: tech/python.md
     - ZooKeeper: tech/zookeeper.md
     - RocketMQ: tech/rocketmq.md
     - RabbitMQ: tech/rabbitmq.md
