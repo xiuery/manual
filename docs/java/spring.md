@@ -3,7 +3,7 @@ Spring原理
 
 ---
 
-#### Spring体系结构
+#### 体系结构
 核心容器(Core Container)、数据访问/集成部分(Data Access/Integration)、web、AOP、test；加载流程：应用上下文加载类、
 
 
