@@ -14,15 +14,34 @@ pip install shadowsocks
 ```
 mkdir /usr/local/shadowsocks/shadowsocks.json
 {
-    "server":"my_server_ip",
-    "server_port":8388,
+    "server":"0.0.0.0",
+    "server_port":4000,
     "local_address": "127.0.0.1",
     "local_port":1080,
-    "password":"mypassword",
+    "password":"xiuery.com",
     "timeout":300,
     "method":"aes-256-cfb",
     "fast_open": false
 }
+
+# server_port: 代理端口，客户端需要用到
+# centos7开放端口：
+# 开启
+service firewalld start
+# 重启
+service firewalld restart
+# 关闭
+service firewalld stop
+# 查看防火墙规则
+firewall-cmd --list-all 
+# 查询端口是否开放
+firewall-cmd --query-port=8080/tcp
+# 开放80端口
+firewall-cmd --permanent --add-port=80/tcp
+# 移除端口
+firewall-cmd --permanent --remove-port=8080/tcp
+#重启防火墙(修改配置后要重启防火墙)
+firewall-cmd --reload
 ```
 
 #### Start
