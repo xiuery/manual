@@ -37,6 +37,24 @@ sudo apt-get install extundelete
 date -d "2019-05-01 00:00:00" +%s               # 转时间戳
 sudo extundelete /dev/sda8 --after 1401634920 --restore-all
 
+# centos7开放端口：
+# 开启
+service firewalld start
+# 重启
+service firewalld restart
+# 关闭
+service firewalld stop
+# 查看防火墙规则
+firewall-cmd --list-all 
+# 查询端口是否开放
+firewall-cmd --query-port=8080/tcp
+# 开放80端口
+firewall-cmd --permanent --add-port=80/tcp
+# 移除端口
+firewall-cmd --permanent --remove-port=8080/tcp
+#重启防火墙(修改配置后要重启防火墙)
+firewall-cmd --reload
+
 # 查看安装列表
 dpkg --list
 
