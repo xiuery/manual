@@ -13,23 +13,28 @@ site_dir: 'dist'
 
 nav:
   - Home: 'index.md'
+  - Devops:
+    - Linux: devops/linux.md
+    - BBR: devops/bbr.md
+    - ZeroTier: devops/zerotier.md
+    - Shadowsocks: devops/shadowsocks.md
+    - Maven: devops/maven.md
+    - Nexus: devops/nexus.md
+    - Svn: devops/svn.md
+    - Git: devops/git.md
+    - Virtualbox: devops/virtualbox.md
+  - Standard:
+    - Restful: standard/restful.md
+    - RPC: standard/rpc.md
   - Tech:
-    - Linux: tech/linux.md
-    - BBR: tech/bbr.md
-    - ZeroTier: tech/zerotier.md
-    - Shadowsocks: tech/shadowsocks.md
-    - Maven: tech/maven.md
-    - Nexus: tech/nexus.md
     - Nginx: tech/nginx.md
     - Python: tech/python.md
     - ZooKeeper: tech/zookeeper.md
     - RocketMQ: tech/rocketmq.md
     - RabbitMQ: tech/rabbitmq.md
-    - Svn: tech/svn.md
-    - Git: tech/git.md
     - xpath: tech/xpath.md
-    - Restful: tech/restful.md
-    - RPC: tech/rpc.md
+  - PHP:
+    - Homestead: php/homestead.md
   - Java:
     - Base: java/index.md
     - Spring: java/spring.md
@@ -38,8 +43,9 @@ nav:
       - Redis: db/redis.md
       - Mongodb: db/mongodb.md
   - Microservice:
-      - Mesh: microservice/mesh.md
       - Docker: microservice/docker.md
+      - Rancher: microservice/rancher.md
+      - Mesh: microservice/mesh.md
       - ELK: microservice/elk.md
 
 theme:

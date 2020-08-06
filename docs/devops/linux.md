@@ -38,6 +38,8 @@ date -d "2019-05-01 00:00:00" +%s               # 转时间戳
 sudo extundelete /dev/sda8 --after 1401634920 --restore-all
 
 # centos7开放端口：
+# 防火墙命令帮助
+firewall-cmd --help | less
 # 开启
 service firewalld start
 # 重启
@@ -46,14 +48,36 @@ service firewalld restart
 service firewalld stop
 # 查看防火墙规则
 firewall-cmd --list-all 
+firewall-cmd --list-ports
 # 查询端口是否开放
 firewall-cmd --query-port=8080/tcp
-# 开放80端口
+# 永久开放80端口
 firewall-cmd --permanent --add-port=80/tcp
+# 临时打开端口，防火墙重启后失效
+firewall-cmd --add-port=80/tcp
 # 移除端口
 firewall-cmd --permanent --remove-port=8080/tcp
+# 关闭端口
+firewall-cmd --remove-port=80/tcp
 #重启防火墙(修改配置后要重启防火墙)
 firewall-cmd --reload
+
+开启端口转发
+firewall-cmd --add-masquerade
+设置端口转发
+firewall-cmd --add-forward-port=port=8080:proto=tcp:toport=80:toadddr=192.168.22.11
+查看端口转发
+firewall-cmd --query-forward-port
+删除端口转发
+firewall-cmd --remove-forward-port=port=8080:proto=tcp:toport=80:toadddr=192.168.22.11
+关闭防火墙
+systemctl stop firewalld.service
+禁止防火墙开机启动
+systemctl disable firewalld.service
+启动防火墙
+systemctl start firewalld.service
+查看防火墙状态
+firewall-cmd --state
 
 # 查看安装列表
 dpkg --list

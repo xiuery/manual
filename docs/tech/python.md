@@ -3,7 +3,7 @@ python 常用操作
 
 ---
 
-#### 安装
+#### Installation
 ```
 # 下载安装包，解压
 # configure
@@ -16,3 +16,6 @@ make && make install
 yum install -y libffi-devel
 make && make install
 ```
+
+#### Links
+- whl安装包：https://www.lfd.uci.edu/~gohlke/pythonlibs/

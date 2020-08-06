@@ -19,8 +19,8 @@ mkdocs build --clean
 #### Deploy
 ```
 git clone https://github.com/xiuery/manual.git
-git pull
 cd manual
+git pull
 mkdocs build --clean
 rm -rf /home/nginx/xs-manual/*
 mv dist/* /home/nginx/xs-manual

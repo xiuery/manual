@@ -4,10 +4,10 @@
 ---
 
 #### Link
-  * [docker hub](https://hub.docker.com/u/xiuery/)
-  * [docker document](https://docs.docker.com/get-started/)
+- [docker hub](https://hub.docker.com/u/xiuery/)
+- [docker document](https://docs.docker.com/get-started/)
 
-#### INSTALL
+#### Installation
 ```
 # uninstall old versions
 sudo apt-get remove docker docker-engine docker.io
@@ -23,6 +23,20 @@ sudo apt-get install docker-ce
 # or install special version
 apt-cache madison docker-ce
 sudo apt-get install docker-ce=<VERSION>
+
+# **************************************
+
+# centos
+sudo yum remove docker \
+  docker-client \
+  docker-client-latest \
+  docker-common \
+  docker-latest \
+  docker-latest-logrotate \
+  docker-logrotate \
+  docker-engine
+
+
 ```
 
 #### UNINSTALL
