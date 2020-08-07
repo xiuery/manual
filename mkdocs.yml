@@ -35,6 +35,7 @@ nav:
     - xpath: tech/xpath.md
   - PHP:
     - Homestead: php/homestead.md
+    - Lumen: php/lumen7.md
   - Java:
     - Base: java/index.md
     - Spring: java/spring.md
