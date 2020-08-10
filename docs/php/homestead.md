@@ -136,6 +136,13 @@ cd ~/Desktop/Homestead
 # 启动
 vagrant up
 
+# 如果添加了box启动仍然找不到，请修改homestead中config版本
+cd ~/Homestead/scripts/homestead.rb
+config.vm.box_version = settings["version"] ||= ">= 0.4.0"
+改为： config.vm.box_version = settings["version"] ||= ">= 0"
+或者修改box版本：
+cd ~/.vagrant.d/boxes
+
 # reload
 vagrant reload --provision
 

@@ -17,37 +17,36 @@ nav:
     - Linux: devops/linux.md
     - BBR: devops/bbr.md
     - ZeroTier: devops/zerotier.md
+    - Virtualbox: devops/virtualbox.md
     - Shadowsocks: devops/shadowsocks.md
-    - Maven: devops/maven.md
-    - Nexus: devops/nexus.md
     - Svn: devops/svn.md
     - Git: devops/git.md
-    - Virtualbox: devops/virtualbox.md
+    - Maven: devops/maven.md
+    - Nexus: devops/nexus.md
+    - Nginx: devops/nginx.md
+    - Python: devops/python.md
+    - ZooKeeper: devops/zookeeper.md
+    - RocketMQ: devops/rocketmq.md
+    - RabbitMQ: devops/rabbitmq.md
+    - xpath: tedevopsch/xpath.md
   - Standard:
     - Restful: standard/restful.md
     - RPC: standard/rpc.md
-  - Tech:
-    - Nginx: tech/nginx.md
-    - Python: tech/python.md
-    - ZooKeeper: tech/zookeeper.md
-    - RocketMQ: tech/rocketmq.md
-    - RabbitMQ: tech/rabbitmq.md
-    - xpath: tech/xpath.md
   - PHP:
     - Homestead: php/homestead.md
     - Lumen: php/lumen7.md
   - Java:
-    - Base: java/index.md
+    - Java: java/index.md
     - Spring: java/spring.md
   - DB:
       - Mysql: db/mysql.md
       - Redis: db/redis.md
       - Mongodb: db/mongodb.md
+      - ELK: db/elk.md
   - Microservice:
       - Docker: microservice/docker.md
       - Rancher: microservice/rancher.md
       - Mesh: microservice/mesh.md
-      - ELK: microservice/elk.md
 
 theme:
     name: mkdocs
