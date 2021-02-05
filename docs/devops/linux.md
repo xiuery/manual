@@ -88,6 +88,20 @@ lsb_release -a
 cat /proc/cpuinfo
 ```
 
+#### 查找文件内容
+```
+# 文件查找
+grep –e “正则表达式” 文件名
+# 不区分大小写
+grep –i “被查找的字符串” 文件名
+# 匹配的行数
+grep -c “被查找的字符串” 文件名
+# 不匹配指定字符串的行
+grep –v “被查找的字符串” 文件名
+# 目录下查找
+find /var/log/ -type f -name "*.log" | xargs grep "119251535"
+```
+
 #### scp命令
 ```
 scp jdk1.8.tar.gz root@10.0.0.1:~               # 将本地文件拷贝到远程服务器的home目录
