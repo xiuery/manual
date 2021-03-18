@@ -15,6 +15,7 @@ nav:
   - Home: 'index.md'
   - Devops:
     - Linux: devops/linux.md
+    - Centos8: devops/centos8.md
     - BBR: devops/bbr.md
     - ZeroTier: devops/zerotier.md
     - Virtualbox: devops/virtualbox.md
@@ -28,13 +29,14 @@ nav:
     - ZooKeeper: devops/zookeeper.md
     - RocketMQ: devops/rocketmq.md
     - RabbitMQ: devops/rabbitmq.md
-    - xpath: tedevopsch/xpath.md
+    - xpath: devops/xpath.md
   - Standard:
     - Restful: standard/restful.md
     - RPC: standard/rpc.md
   - PHP:
+    - PHP: php/php.md
     - Homestead: php/homestead.md
-    - Lumen: php/lumen7.md
+    - Laravel7: php/laravel7.md
   - Java:
     - Java: java/index.md
     - Spring: java/spring.md
