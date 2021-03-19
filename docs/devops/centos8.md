@@ -88,9 +88,14 @@ mysql_secure_installation
 # 重置密码
 mysql> alter user 'root'@'localhost' identified by 'newpassword';
 
+# 创建database
+mysql> CREATE DATABASE `xs_auth` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
 # 添加用户并授权
 mysql> create user xiuery@'%' identified by 'xiuery-pwd';
-mysql> grant select,update,delete on xs_user.* to xiuery;
+mysql> grant select,update,delete on xs_auth.* to xiuery;
+# 撤销授权
+mysql> revoke select,update,delete on xs_auth.* from 'xiuery'@'%';
 
 # 允许远程登录
 #   这里安全与数据库组合用：设置root只允许本地连接

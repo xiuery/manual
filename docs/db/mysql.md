@@ -3,10 +3,21 @@ mysql的常用语法
 
 ---
 
-#### 0.常用
+#### [常用及权限](index.html)
 - 修改密码
 ```
 mysql>update user set password=password('root') where user='root' and host='localhost';
+# mysql8用这个
+mysql> alter user 'root'@'localhost' identified by 'newpassword';
+
+# 创建database
+mysql> CREATE DATABASE `xs_auth` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+# 添加用户并授权
+mysql> create user xiuery@'%' identified by 'xiuery-pwd';
+mysql> grant select,update,delete on xs_auth.* to xiuery;
+# 撤销授权
+mysql> revoke select,update,delete on xs_auth.* from 'xiuery'@'%';
 ```
 
 - 清空表

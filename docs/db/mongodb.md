@@ -7,4 +7,4 @@
 JSON 文档模型、动态的数据模式、二级索引强大、查询功能、自动分片、水平扩展、自动复制、高可用、文本搜索、企业级安全、聚合框架MapReduce、大文件存储GridFS
 
 #### 入门篇
-[MongoDB 入门篇](manual.html)
+[MongoDB 入门篇](index.html)
