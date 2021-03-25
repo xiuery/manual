@@ -5,8 +5,26 @@ linux 常用操作
 
 #### 常用命令
 ```
+# 系统、内核信息
+uname -a
+lsb_release -a
+cat /proc/cpuinfo
+cat /proc/version
+
+# 创建nologin用户
+groupadd -r nginx
+useradd -r -g nginx -s/sbin/nologin -d /home/nginx -M nginx
+
 # 修改密码
 passwd
+
+# ls排序
+# 按时间排序
+ls -lt    ==> ll -t
+ls -ltr   ==> ll -tr
+# 按文件大小排序
+ls -lhS   ==> ll -hS
+ls -lhSr  ==> ll -hSr
 
 # 查看占用端口的pid
 lsof -i:80
@@ -81,11 +99,6 @@ firewall-cmd --state
 
 # 查看安装列表
 dpkg --list
-
-# 系统信息
-uname -a
-lsb_release -a
-cat /proc/cpuinfo
 ```
 
 #### 查找文件内容

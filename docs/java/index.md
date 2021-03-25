@@ -8,7 +8,7 @@ java基础
 # 下载解压到/usr/local：/usr/local/jdk1.8.0_211
 
 # /etc/profile.d下新建java8.sh添加以下内容
-export JAVA_HOME=/usr/local/jdk1.8.0_211
+export JAVA_HOME=/usr/local/jdk1.8.0_281
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 export PATH=$PATH:$JAVA_HOME/bin
 

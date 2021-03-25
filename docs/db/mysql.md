@@ -11,7 +11,7 @@ mysql>update user set password=password('root') where user='root' and host='loca
 mysql> alter user 'root'@'localhost' identified by 'newpassword';
 
 # 创建database
-mysql> CREATE DATABASE `xs_auth` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+mysql> CREATE DATABASE `xds` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 # 添加用户并授权
 mysql> create user xiuery@'%' identified by 'xiuery-pwd';
