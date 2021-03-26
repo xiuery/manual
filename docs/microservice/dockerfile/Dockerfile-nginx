@@ -1,0 +1,21 @@
+FROM 10.0.0.119:8082/library/nginx:1.14
+LABEL author=xiuery
+
+ENV TZ Asia/Shanghai
+
+# 自定义配置
+ENV ETC_PATH /etc/nginx
+COPY ./docker/nginx/conf $ETC_PATH
+
+# 项目代码
+ENV PROJECT /var/www/html/project
+RUN mkdir -p $PROJECT
+COPY . $PROJECT
+RUN rm -rf $PROJECT/docker
+RUN rm -f $PROJECT/Dockerfile
+
+# 工作目录
+WORKDIR $PROJECT
+
+# build
+# docker build -t="10.0.0.119:8082/project-name:version" .

@@ -13,7 +13,7 @@
 
 # 创建用户
 groupadd -r nexus
-useradd -r -g nexus -s/bin/bash -d /home/nexus -M nexus
+useradd -r -g nexus -s/bin/bash -d /home/nexus
 
 # 修改目录权限
 chown -R nexus:nexus /usr/local/nexus
@@ -77,6 +77,10 @@ sudo service nexus start|stop|restart|status
 
 #### docker私有仓库
 ![nexus](../images/nexus-docker.png)
+
+- Error response from daemon: login attempt to http://** failed with status: 401 Unauthorized
+![nexus](../images/nexus-docker-login.png)
+
 ```
 # nexus管理界面，create repositories -> docker(hosted)
 # 开启nexus-docker端口防火墙
@@ -96,8 +100,10 @@ docker login -u admin -p admin http://10.0.0.102:8082
 docker push 10.0.0.102:8082/library/nginx:1.18
 
 # 基础镜像
-docker pull nginx:1.19.8
 docker pull nginx:1.18.0
+docker pull nginx:1.16.1
+docker pull nginx:1.14.2
+docker pull nginx:1.12.2
 docker pull php:8.0.3-fpm
 docker pull php:7.4.16-fpm
 docker pull php:5.6-fpm
@@ -107,8 +113,10 @@ docker pull python:3.7.10
 docker pull python:3.6.13
 docker pull python:3.5.10
 
-docker tag nginx:1.19.8 10.0.0.119:8082/library/nginx:1.19.8
 docker tag nginx:1.18.0 10.0.0.119:8082/library/nginx:1.18.0
+docker tag nginx:1.16.1 10.0.0.119:8082/library/nginx:1.16.1
+docker tag nginx:1.14.2 10.0.0.119:8082/library/nginx:1.14.2
+docker tag nginx:1.12.2 10.0.0.119:8082/library/nginx:1.12.2
 docker tag php:8.0.3-fpm 10.0.0.119:8082/library/php:8.0.3-fpm
 docker tag php:7.4.16-fpm 10.0.0.119:8082/library/php:7.4.16-fpm
 docker tag php:5.6-fpm 10.0.0.119:8082/library/php:5.6-fpm
@@ -118,10 +126,12 @@ docker tag python:3.7.10 10.0.0.119:8082/library/python:3.7.10
 docker tag python:3.6.13 10.0.0.119:8082/library/python:3.6.13
 docker tag python:3.5.10 10.0.0.119:8082/library/python:3.5.10
 
-docker login -u admin -p 10.0.0.119:8082
+docker login 10.0.0.119:8082
 
-docker push 10.0.0.119:8082/library/nginx:1.19.8
 docker push 10.0.0.119:8082/library/nginx:1.18.0
+docker push 10.0.0.119:8082/library/nginx:1.16.1
+docker push 10.0.0.119:8082/library/nginx:1.14.2
+docker push 10.0.0.119:8082/library/nginx:1.12.2
 docker push 10.0.0.119:8082/library/php:8.0.3-fpm
 docker push 10.0.0.119:8082/library/php:7.4.16-fpm
 docker push 10.0.0.119:8082/library/php:5.6-fpm

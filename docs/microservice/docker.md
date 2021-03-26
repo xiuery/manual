@@ -25,8 +25,9 @@ apt-cache madison docker-ce
 sudo apt-get install docker-ce=<VERSION>
 
 # **************************************
-
 # centos
+
+# remove
 sudo yum remove docker \
   docker-client \
   docker-client-latest \
@@ -36,7 +37,11 @@ sudo yum remove docker \
   docker-logrotate \
   docker-engine
 
-
+sudo yum install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum list docker-ce --showduplicates | sort -r
+yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io
+systemctl start docker
 ```
 
 #### UNINSTALL
@@ -127,7 +132,7 @@ sudo docker login
 sudo docker push xiuery/centos
 ```
 
-#### Dockerfile指令
+#### [Dockerfile指令](./dockerfile/Dockerfile)
 ```
 # FROM指令用于指定其后构建新镜像所使用的基础镜像
 FROM <IMAGE>:<TAG>
