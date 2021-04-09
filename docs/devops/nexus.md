@@ -5,7 +5,6 @@
 
 #### [Installation](https://help.sonatype.com/repomanager3/installation)
 ```
-# nexus运行在Java中
 # 先安装Java环境
 
 # 下载解压到/usr/local/nexus
@@ -22,7 +21,7 @@ chown -R nexus:nexus /usr/local/nexus
 vi /etc/security/limits.conf
 > nexus - nofile 65536
 
-#  修改配置项
+# 修改配置项
 cd /usr/local/nexus-{version}
 # Java Home
 vi nexus-{version}/bin/nexus

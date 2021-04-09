@@ -1,6 +1,8 @@
 ### centos8
 centos8 + zerotier + mysql8 + docker + gilab + jenkins
 
+---
+
 #### 刻录镜像
 - 下载系统ISO
 ```
@@ -107,3 +109,13 @@ firewall-cmd --list-ports
 mysql> select user,host,plugin,authentication_string from user;
 mysql> alter user 'xiuery'@'localhost' identified with mysql_native_password by 'xiuery-pwd';
 ```
+
+#### [Docker](../microservice/docker.md)
+
+#### [Java](../java/index.md)
+
+#### [Nexus安装](./nexus.md)
+
+#### [Jenkins](./jenkins.md)
+
+#### [Gitlab](./gitlab.md)

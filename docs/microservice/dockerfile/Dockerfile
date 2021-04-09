@@ -21,8 +21,7 @@ COPY ./docker/default.conf $ETC_PATH_NGINX/conf.d/
 ENV PROJECT /var/www/html/project
 RUN mkdir -p $PROJECT
 COPY . $PROJECT
-RUN cp -f $PROJECT/lib/config-prod.inc.php $PROJECT/lib/config.inc.php \
-    && rm -rf $PROJECT/docker \
+RUN rm -rf $PROJECT/docker \
     && rm -f $PROJECT/Dockerfile \
     && rm -f $PROJECT/*.sql \
     && rm -f $PROJECT/email.html \

@@ -57,7 +57,7 @@ cd nginx-1.16.0
 --group=nginx \
 --error-log-path=/var/log/nginx/error.log \
 --http-log-path=/var/log/nginx/access.log \
---pid-path=/var/run/nginx.pid  \
+--pid-path=/var/run/nginx.pid \
 --lock-path=/usr/local/nginx/nginx.lock \
 --with-http_ssl_module \
 --with-http_v2_module \

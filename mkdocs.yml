@@ -15,20 +15,22 @@ nav:
   - Home: 'index.md'
   - Devops:
     - Linux: devops/linux.md
-    - Centos8: devops/centos8.md
     - BBR: devops/bbr.md
+    - Centos8: devops/centos8.md
     - ZeroTier: devops/zerotier.md
+    - Nexus: devops/nexus.md
+    - Jenkins: devops/jenkins.md
+    - Gitlab: devops/gitlab.md
+    - Nginx: devops/nginx.md
+    - ZooKeeper: devops/zookeeper.md
+    - RocketMQ: devops/rocketmq.md
+    - RabbitMQ: devops/rabbitmq.md
     - Virtualbox: devops/virtualbox.md
     - Shadowsocks: devops/shadowsocks.md
     - Svn: devops/svn.md
     - Git: devops/git.md
     - Maven: devops/maven.md
-    - Nexus: devops/nexus.md
-    - Nginx: devops/nginx.md
     - Python: devops/python.md
-    - ZooKeeper: devops/zookeeper.md
-    - RocketMQ: devops/rocketmq.md
-    - RabbitMQ: devops/rabbitmq.md
     - xpath: devops/xpath.md
   - Standard:
     - Restful: standard/restful.md

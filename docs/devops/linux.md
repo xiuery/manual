@@ -29,6 +29,7 @@ ls -lhSr  ==> ll -hSr
 # 查看占用端口的pid
 lsof -i:80
 ps -ef | grep pid#
+netstat -tunlp |grep 3306
 
 # 压缩解压
 tar -zxvf test.tar.gz
@@ -67,6 +68,7 @@ service firewalld stop
 # 查看防火墙规则
 firewall-cmd --list-all 
 firewall-cmd --list-ports
+firewall-cmd --list-services
 # 查询端口是否开放
 firewall-cmd --query-port=8080/tcp
 # 永久开放80端口
