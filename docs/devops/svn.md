@@ -42,6 +42,18 @@ cd /home/wwwroot/
 svn checkout svn://xiuery.com/spider --username name --password pwd
 ```
 
+
+#### 迁移
+```
+# 原服务器
+svnadmin dump km > km.dump
+# 传输至新服务器
+scp km.dump root@ip:/home/svn
+# 新服务器
+svnadmin load km < km.dump
+```
+
+
 #### Start
 ```
 svnserve -d -r /home/svn

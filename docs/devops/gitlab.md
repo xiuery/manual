@@ -5,6 +5,16 @@ open DevOps platform
 
 #### [Installation](https://about.gitlab.com/install)
 ```
+# 卸载
+# 停止服务
+gitlab-ctl stop
+# 卸载
+rpm -e gitlab-ee
+# 查看gitlab进程并kill
+ps -ef | grep gitlab 或者 ps aux | grep gitlab
+# 删掉配置
+find / -name gitlab | xargs rm -rf
+
 # 安装依赖
 sudo yum install -y curl policycoreutils-python openssh-server perl
 
@@ -33,5 +43,9 @@ vi /etc/gitlab/gitlab.rb
 sudo gitlab-ctl reconfigure
 sudo gitlab-ctl restart|status|stop|start
 
-
+# 启动报错
+# 1.warning: redis: unable to open supervise/ok: file does not exist
+systemctl restart gitlab-runsvdir
+gitlab-ctl reconfigure
+# 2.地址访问502报错：机器配置过低，关闭其他服务重启或者分配资源重装
 ```
