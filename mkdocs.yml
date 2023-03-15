@@ -44,6 +44,7 @@ nav:
     - Spring: java/spring.md
   - DB:
       - Mysql: db/mysql.md
+      - Archery: db/archery.md
       - Redis: db/redis.md
       - Mongodb: db/mongodb.md
       - ELK: db/elk.md

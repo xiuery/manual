@@ -3,6 +3,34 @@ mysql的常用语法
 
 ---
 
+#### mysql8添加用户及授权
+```
+# 创建用户
+create user archery@'%' identified by 'password';
+# 授权
+grant all privileges on archery.* to archery;
+or
+grant select,update,delete on archery.* to archery;
+# 撤销授权
+revoke select,update,delete on archery.* from 'archery'@'%';
+
+# 生效
+FLUSH PRIVILEGES; 
+
+# 无密码登录
+> my.cnf: skip-grant-tables
+
+# 修改密码
+use mysql;
+select host, user, authentication_string, plugin from user\G;
+update user set authentication_string='',plugin='mysql_native_password' where User='root';
+FLUSH PRIVILEGES; 
+ALTER USER archery@'%' IDENTIFIED BY 'new-password';
+
+# 删除用户
+drop user archery@'%'
+```
+
 #### [常用及权限](index.html)
 - 修改密码
 ```

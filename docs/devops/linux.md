@@ -11,6 +11,18 @@ lsb_release -a
 cat /proc/cpuinfo
 cat /proc/version
 
+# 查询环境变量
+printenv
+
+# 应用开机自启
+chkconfig nexus on/off
+systemctl enable/disable docker
+echo /usr/local/nginx/sbin/nginx >> /etc/rc.local
+
+# 后台运行: nohup
+nohup sh /usr/local/nexus/nexus-{version}/bin/nexus run &
+nohup wssh --address=0.0.0.0 --port=8888 --log-file-prefix=/var/log/webssh/wssh.log &
+
 # 创建nologin用户
 groupadd -r nginx
 useradd -r -g nginx -s/sbin/nologin -d /home/nginx -M nginx
@@ -138,6 +150,19 @@ sudo apt-get dist-upgrade   # 升级软件和系统，会卸载一些依赖
 
 # 删除
 sudo apt-get --purge remove package
+```
+
+#### [WebSSH](https://github.com/huashengdun/webssh)
+```
+# 安装包
+pip3 install webssh
+
+# 启动: 写入/etc/rc.local开机启动
+nohup wssh --address=0.0.0.0 --port=8888 --log-file-prefix=/var/log/webssh/wssh.log &
+
+# web访问
+https://ssh.xiuery.com/#bgcolor=silver&fontsize=16
+https://ssh.xiuery.com/#bgcolor=silver&fontsize=16&hostname=localhost&username=root
 ```
 
 #### ssh免密登录

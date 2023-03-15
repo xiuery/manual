@@ -3,7 +3,12 @@
 
 ---
 
-#### [Installation](https://help.sonatype.com/repomanager3/installation)
+#### Links
+- [Installation](https://help.sonatype.com/repomanager3/installation)
+- [https://zhuanlan.zhihu.com/p/591638358](https://zhuanlan.zhihu.com/p/591638358)
+
+
+#### Installation
 ```
 # 先安装Java环境
 
@@ -64,6 +69,9 @@ sudo ln -s /usr/local/nexus/nexus-{version}/bin/nexus /etc/init.d/nexus
 cd /etc/init.d
 sudo chkconfig --add nexus
 sudo chkconfig --levels 345 nexus on
+
+# 开机自启/禁用
+chkconfig nexus on/off
 
 # 使用系统服务命令
 sudo service nexus start|stop|restart|status
