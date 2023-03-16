@@ -50,6 +50,7 @@ nav:
       - ELK: db/elk.md
   - Microservice:
       - Docker: microservice/docker.md
+      - Docker-compose: microservice/docker-compose.md
       - Harbor: microservice/harbor.md
       - Rancher: microservice/rancher.md
       - Mesh: microservice/mesh.md
