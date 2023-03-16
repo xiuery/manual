@@ -270,13 +270,15 @@ sudo docker run -t -i --name x_centos -v /home/projects/test:/home/projects/test
 ```
 
 #### [Selenium](https://hub.docker.com/u/selenium)
+- docker run
+
 ```
 # standalone与node的区别: standalone独立运行; node集群运行
 
 # 运行standalone-chrome
 docker run -d --name standalone-chrome --restart=always -p 4444:4444 -p 5900:5900 -p 7900:7900 --shm-size="2g" docker.xiuery.com/library/selenium/standalone-chrome:110.0
 or 
-docker: docker run -d --name standalone-chrome --restart=always  -p 4444:4444 -p 7900:7900 --shm-size="2g" docker.xiuery.com/library/selenium/standalone-chrome:110.0
+docker run -d --name standalone-chrome --restart=always  -p 4444:4444 -p 7900:7900 --shm-size="2g" docker.xiuery.com/library/selenium/standalone-chrome:110.0
 
 # web访问:
 http://127.0.0.1:4444
@@ -284,5 +286,21 @@ http://127.0.0.1:7900
 
 # 首次登录，修改vnc密码
 touch /home/seluser/.vnc/passwd
-x11vnc: x11vnc -storepasswd password /home/seluser/.vnc/passwd
+x11vnc -storepasswd password /home/seluser/.vnc/passwd
+```
+
+- docker-compose
+```
+version: '3'
+
+services:
+  standalone-chrome:
+    image: harbor.xiuery.com/library/selenium/standalone-chrome:110.0
+    container_name: standalone-chrome
+    shm_size: 2g
+    restart: always
+    ports:
+      - "4444:4444"
+      #- "5900:5900"
+      - "7900:7900"
 ```
