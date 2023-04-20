@@ -45,6 +45,7 @@ nav:
   - DB:
       - Mysql: db/mysql.md
       - Archery: db/archery.md
+      - Metabase: db/metabase.md
       - Redis: db/redis.md
       - Mongodb: db/mongodb.md
       - ELK: db/elk.md
