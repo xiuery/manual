@@ -59,12 +59,15 @@ nav:
     - RPC: standard/rpc.md
 
 theme:
-    name: mkdocs
+    name: readthedocs
     highlightjs: true
-    #include_sidebar: false
     hljs_languages:
       - yaml
       - rust
+    include_homepage_in_sidebar: true
+    collapse_navigation: true
+    titles_only: true
+    sticky_navigation: true
 
 extra_css:
     - css/extra.css
