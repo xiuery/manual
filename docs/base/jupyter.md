@@ -31,7 +31,7 @@ LAB_OPTS="${LAB_OPTS} --no-browser"
 - Dockerfile
 ```
 # anaconda3
-FROM harbor.xiuery.com/library/anaconda3:2022.10
+FROM localhost:8002/library/anaconda3:2022.10
 LABEL maintainer="xiuery.com@gmail.com"
 
 USER root
@@ -61,7 +61,7 @@ docker push localhost:8002/app/jupyter:3.4.4
 version: '3.9'
 services:
   jupyter:
-    image: harbor.xiuery.com/app/jupyter:3.4.4
+    image: localhost:8002/app/jupyter:3.4.4
     container_name: jupyter
     hostname: jupyter
     restart: always

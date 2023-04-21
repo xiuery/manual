@@ -160,9 +160,9 @@ pip3 install webssh
 # 启动: 写入/etc/rc.local开机启动
 nohup wssh --address=0.0.0.0 --port=8888 --log-file-prefix=/var/log/webssh/wssh.log &
 
-# web访问
-https://ssh.xiuery.com/#bgcolor=silver&fontsize=16
-https://ssh.xiuery.com/#bgcolor=silver&fontsize=16&hostname=localhost&username=root
+# web访问: 实际改成域名
+https://localhost:8888/#bgcolor=silver&fontsize=16
+https://localhost:8888/#bgcolor=silver&fontsize=16&hostname=localhost&username=root
 ```
 
 #### ssh免密登录

@@ -81,9 +81,9 @@ docker-compose build
 # standalone与node的区别: standalone独立运行; node集群运行
 
 # 运行standalone-chrome
-docker run -d --name standalone-chrome --restart=always -p 4444:4444 -p 5900:5900 -p 7900:7900 --shm-size="2g" docker.xiuery.com/library/selenium/standalone-chrome:110.0
+docker run -d --name standalone-chrome --restart=always -p 4444:4444 -p 5900:5900 -p 7900:7900 --shm-size="2g" localhost:8002/library/selenium/standalone-chrome:110.0
 or 
-docker run -d --name standalone-chrome --restart=always  -p 4444:4444 -p 7900:7900 --shm-size="2g" docker.xiuery.com/library/selenium/standalone-chrome:110.0
+docker run -d --name standalone-chrome --restart=always  -p 4444:4444 -p 7900:7900 --shm-size="2g" localhost:8002/library/selenium/standalone-chrome:110.0
 
 # web访问:
 http://127.0.0.1:4444
@@ -100,7 +100,7 @@ version: '3'
 
 services:
   standalone-chrome:
-    image: harbor.xiuery.com/library/selenium/standalone-chrome:110.0
+    image: localhost:8002/library/selenium/standalone-chrome:110.0
     container_name: standalone-chrome
     shm_size: 2g
     restart: always

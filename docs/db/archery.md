@@ -19,8 +19,8 @@ DATABASE_URL=mysql://archery:password@Host:3306/archery
 CACHE_URL=redis://redis:6379/0?PASSWORD=password
 
 # https://docs.djangoproject.com/en/4.0/ref/settings/#csrf-trusted-origins
-#CSRF_TRUSTED_ORIGINS=http://127.0.0.1:9123
-CSRF_TRUSTED_ORIGINS=https://archery.xiuery.com
+# 实际改成域名 
+CSRF_TRUSTED_ORIGINS=http://127.0.0.1:9123
 
 # https://django-auth-ldap.readthedocs.io/en/latest/
 ENABLE_LDAP=false

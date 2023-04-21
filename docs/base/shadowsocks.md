@@ -18,7 +18,7 @@ mkdir /usr/local/shadowsocks/shadowsocks.json
     "server_port":4000,
     "local_address": "127.0.0.1",
     "local_port":1080,
-    "password":"xiuery.com",
+    "password":"password",
     "timeout":300,
     "method":"aes-256-cfb",
     "fast_open": false

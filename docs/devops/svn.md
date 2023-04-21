@@ -39,7 +39,8 @@ vi post-commit
     svn update --username name --password pwd --no-auth-cache --non-interactive
 
 cd /home/wwwroot/
-svn checkout svn://xiuery.com/spider --username name --password pwd
+# 实际改成域名
+svn checkout svn://localhost/spider --username name --password pwd
 ```
 
 

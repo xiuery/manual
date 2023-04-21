@@ -39,7 +39,8 @@ http:
 
 # Uncomment external_url if you want to enable external proxy
 # And when it enabled the hostname will no longer used
-external_url: https://harbor.xiuery.com
+# 实际改成域名
+external_url: https://localhost
 
 # The initial password of Harbor admin
 # It only works in first time to install harbor
