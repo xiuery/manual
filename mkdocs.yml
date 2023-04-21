@@ -13,25 +13,27 @@ site_dir: 'dist'
 
 nav:
   - Home: 'index.md'
+  - Base:
+    - Linux: base/linux.md
+    - Centos8: base/centos8.md
+    - BBR: base/bbr.md
+    - Virtualbox: base/virtualbox.md
+    - ZeroTier: base/zerotier.md
+    - Shadowsocks: base/shadowsocks.md
+    - xpath: base/xpath.md
+    - Python: base/python.md
+    - Jupyter: base/jupyter.md
   - Devops:
-    - Linux: devops/linux.md
-    - BBR: devops/bbr.md
-    - Centos8: devops/centos8.md
-    - ZeroTier: devops/zerotier.md
-    - Nexus: devops/nexus.md
-    - Jenkins: devops/jenkins.md
-    - Gitlab: devops/gitlab.md
-    - Nginx: devops/nginx.md
-    - ZooKeeper: devops/zookeeper.md
-    - RocketMQ: devops/rocketmq.md
-    - RabbitMQ: devops/rabbitmq.md
-    - Virtualbox: devops/virtualbox.md
-    - Shadowsocks: devops/shadowsocks.md
     - Svn: devops/svn.md
     - Git: devops/git.md
-    - Maven: devops/maven.md
-    - Python: devops/python.md
-    - xpath: devops/xpath.md
+    - Gitlab: devops/gitlab.md
+    - Nginx: devops/nginx.md
+    - RocketMQ: devops/rocketmq.md
+    - RabbitMQ: devops/rabbitmq.md
+    - ZooKeeper: devops/zookeeper.md
+    - Harbor: devops/harbor.md
+    - Nexus: devops/nexus.md
+    - Jenkins: devops/jenkins.md
   - Standard:
     - Restful: standard/restful.md
     - RPC: standard/rpc.md
@@ -41,6 +43,7 @@ nav:
     - Laravel7: php/laravel7.md
   - Java:
     - Java: java/index.md
+    - Maven: java/maven.md
     - Spring: java/spring.md
   - DB:
       - Mysql: db/mysql.md
@@ -49,12 +52,11 @@ nav:
       - Redis: db/redis.md
       - Mongodb: db/mongodb.md
       - ELK: db/elk.md
-  - Microservice:
-      - Docker: microservice/docker.md
-      - Docker-compose: microservice/docker-compose.md
-      - Harbor: microservice/harbor.md
-      - Rancher: microservice/rancher.md
-      - Mesh: microservice/mesh.md
+  - Docker:
+      - Docker: docker/docker.md
+      - Docker-compose: docker/docker-compose.md
+      - Rancher: docker/rancher.md
+      - Mesh: docker/mesh.md
 
 theme:
     name: mkdocs

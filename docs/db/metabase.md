@@ -102,6 +102,7 @@ services:
     image: metabase/metabase:v0.46.1
     container_name: metabase
     hostname: metabase
+    restart: always
     ports:
       - 3000:3000
     volumes:
