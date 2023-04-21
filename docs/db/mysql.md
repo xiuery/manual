@@ -31,7 +31,7 @@ ALTER USER archery@'%' IDENTIFIED BY 'new-password';
 drop user archery@'%'
 ```
 
-#### [常用及权限](index.html)
+#### [常用及权限](manual.html)
 - 修改密码
 ```
 mysql>update user set password=password('root') where user='root' and host='localhost';
