@@ -31,12 +31,16 @@ nav:
     - RocketMQ: devops/rocketmq.md
     - RabbitMQ: devops/rabbitmq.md
     - ZooKeeper: devops/zookeeper.md
-    - Harbor: devops/harbor.md
     - Nexus: devops/nexus.md
+    - Harbor: devops/harbor.md
     - Jenkins: devops/jenkins.md
-  - Standard:
-    - Restful: standard/restful.md
-    - RPC: standard/rpc.md
+  - DB:
+    - Mysql: db/mysql.md
+    - Redis: db/redis.md
+    - Mongodb: db/mongodb.md
+    - Archery: db/archery.md
+    - Metabase: db/metabase.md
+    - ELK: db/elk.md
   - PHP:
     - PHP: php/php.md
     - Homestead: php/homestead.md
@@ -45,18 +49,14 @@ nav:
     - Java: java/index.md
     - Maven: java/maven.md
     - Spring: java/spring.md
-  - DB:
-      - Mysql: db/mysql.md
-      - Archery: db/archery.md
-      - Metabase: db/metabase.md
-      - Redis: db/redis.md
-      - Mongodb: db/mongodb.md
-      - ELK: db/elk.md
   - Docker:
-      - Docker: docker/docker.md
-      - Docker-compose: docker/docker-compose.md
-      - Rancher: docker/rancher.md
-      - Mesh: docker/mesh.md
+    - Docker: docker/docker.md
+    - Docker-compose: docker/docker-compose.md
+    - Rancher: docker/rancher.md
+    - Mesh: docker/mesh.md
+  - Standard:
+    - Restful: standard/restful.md
+    - RPC: standard/rpc.md
 
 theme:
     name: mkdocs
