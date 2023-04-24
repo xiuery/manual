@@ -16,7 +16,7 @@ nav:
   - Base:
     - Linux: base/linux.md
     - Centos8: base/centos8.md
-    - BBR: base/bbr.md
+    - sed: base/sed.md
     - Virtualbox: base/virtualbox.md
     - ZeroTier: base/zerotier.md
     - Shadowsocks: base/shadowsocks.md

@@ -6,7 +6,7 @@ web,反向代理,负载均衡
 #### 创建用户
 ```
 groupadd -r nginx
-useradd -r -g nginx -s/sbin/nologin -d /home/nginx -M nginx
+useradd -r -g nginx -s /sbin/nologin -d /home/nginx -M nginx
 ```
 
 #### 安装依赖

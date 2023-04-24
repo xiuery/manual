@@ -17,7 +17,7 @@
 
 # 创建用户
 groupadd -r nexus
-useradd -r -g nexus -s/bin/bash -d /home/nexus
+useradd -r -g nexus -s /bin/bash -d /home/nexus
 
 # 修改目录权限
 chown -R nexus:nexus /usr/local/nexus
