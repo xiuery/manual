@@ -127,7 +127,7 @@ sed 's/\w\+/[&]/g' test.txt
 #### 查找与替换
 ```
 # 每行第一次出现的 oo 用字符串 kk 替换
-sed -e 's/oo/kk/ test.txt
+sed -e 's/oo/kk/' test.txt
 
 # 对文件中所有符合的字符串都被替换
 sed -e 's/oo/kk/g' test.txt
