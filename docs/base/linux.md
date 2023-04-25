@@ -11,6 +11,9 @@ lsb_release -a
 cat /proc/cpuinfo
 cat /proc/version
 
+# 内存信息及插槽
+dmidecode -t memory
+
 # 环境变量
 printenv
 
