@@ -115,6 +115,29 @@ ps -ef | head -1;ps -ef | grep s                        # 取前10行,固定titl
 ps -ef | head -1;ps -ef | sort -k2 -rn | head -10       # 取前10行,固定title行
 ```
 
+#### 查找文件内容
+```
+# 文件查找
+grep –e "正则表达式" 文件名
+# 不区分大小写
+grep –i "被查找的字符串" 文件名
+# 匹配的行数
+grep -c "被查找的字符串" 文件名
+# 不匹配指定字符串的行
+grep –v "被查找的字符串" 文件名
+# 目录下查找
+find /var/log/ -type f -name "*.log" | xargs grep "119251535"
+```
+
+#### scp命令
+```
+scp jdk1.8.tar.gz root@10.0.0.1:~               # 将本地文件拷贝到远程服务器的home目录
+scp -r jdk1.8 root@10.0.0.1:~                   # 将本地文件夹拷贝到远程服务器的home目录
+scp root@10.0.0.1:/usr/local/jdk1.8.tar.gz ./   # 将远程服务器的文件拷贝到本地当前目录
+scp -r root@10.0.0.1:/usr/local/jdk1.8 ./       # 将远程服务器的文件夹拷贝到本地当前目录
+scp -P 22222 jdk1.8.tar.gz root@10.0.0.1:~      # 指定的远程端口
+```
+
 #### 服务自启动
 ```
 # 服务开机自启
@@ -175,29 +198,6 @@ systemctl start firewalld.service
 firewall-cmd --state
 ```
 
-#### 查找文件内容
-```
-# 文件查找
-grep –e "正则表达式" 文件名
-# 不区分大小写
-grep –i "被查找的字符串" 文件名
-# 匹配的行数
-grep -c "被查找的字符串" 文件名
-# 不匹配指定字符串的行
-grep –v "被查找的字符串" 文件名
-# 目录下查找
-find /var/log/ -type f -name "*.log" | xargs grep "119251535"
-```
-
-#### scp命令
-```
-scp jdk1.8.tar.gz root@10.0.0.1:~               # 将本地文件拷贝到远程服务器的home目录
-scp -r jdk1.8 root@10.0.0.1:~                   # 将本地文件夹拷贝到远程服务器的home目录
-scp root@10.0.0.1:/usr/local/jdk1.8.tar.gz ./   # 将远程服务器的文件拷贝到本地当前目录
-scp -r root@10.0.0.1:/usr/local/jdk1.8 ./       # 将远程服务器的文件夹拷贝到本地当前目录
-scp -P 22222 jdk1.8.tar.gz root@10.0.0.1:~      # 指定的远程端口
-```
-
 #### [WebSSH](https://github.com/huashengdun/webssh)
 ```
 # 安装包
@@ -209,6 +209,7 @@ nohup wssh --address=0.0.0.0 --port=8888 --log-file-prefix=/var/log/webssh/wssh.
 # web访问: 实际改成域名
 https://localhost:8888/#bgcolor=silver&fontsize=16
 https://localhost:8888/#bgcolor=silver&fontsize=16&hostname=localhost&username=root
+https://localhost:8888/#bgcolor=silver&fontsize=16&hostname=localhost&username=root&command=cd%20/opt
 ```
 
 #### ssh免密登录

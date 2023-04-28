@@ -3,7 +3,11 @@ open DevOps platform
 
 ---
 
-#### [Installation](https://about.gitlab.com/install)
+#### Links
+- [Installation](https://about.gitlab.com/install)
+- [Install Docker](https://docs.gitlab.com/ee/install/docker.html)
+
+#### Installation
 ```
 # 卸载
 # 停止服务
@@ -48,4 +52,39 @@ sudo gitlab-ctl restart|status|stop|start
 systemctl restart gitlab-runsvdir
 gitlab-ctl reconfigure
 # 2.地址访问502报错：机器配置过低，关闭其他服务重启或者分配资源重装
+```
+
+#### Docker安装
+- docker-compose.yml
+```
+version: '3.6'
+services:
+  gitlab:
+    image: localhost:8002/devops/gitlab-ce:15.11.0-ce.0
+    container_name: gitlab
+    hostname: gitlab
+    restart: always
+    environment:
+      TZ: Asia/Shanghai
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.xiuery.com:8929'
+        gitlab_rails['gitlab_shell_ssh_port'] = 2223
+    ports:
+      - '8929:8929'
+      - '2223:22'
+    volumes:
+      - './config:/etc/gitlab'
+      - './logs:/var/log/gitlab'
+      - '/data/gitlab:/var/opt/gitlab'
+    shm_size: '256m'
+```
+
+- 启动
+```
+docker-compose -f docker-compose.yml up -d
+```
+
+- root密码
+```
+cat ./config/initial_root_password
 ```

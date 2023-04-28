@@ -291,3 +291,19 @@ server {
     }
 }
 ```
+
+#### docker-compose
+```
+version: '3.9'
+
+services:
+  web:
+    image: localhost:8002/library/nginx:1.22
+    container_name: nginx
+    hostname: nginx
+    restart: always
+    ports:
+      - "9500:80"
+    environment:
+      - NGINX_PORT=80
+```
