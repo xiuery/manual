@@ -225,9 +225,9 @@ acme.sh --register-account -m xiuery.com@gmail.com
 # aliyun为例：用户 -> AccessKey管理 -> 子用户AccessKey -> 添加账户并授权AliyunDNSFullAccess
 
 # 泛域名
-acme.sh --issue --dns dns_ali -d xiuey.com -d *.xiuey.com
+acme.sh --issue --dns dns_ali -d xiuery.com -d *.xiuery.com
 
 # debug
-acme.sh --issue --dns dns_ali -d xiuey.com -d '*.xiuey.com' --debug
-acme.sh --issue --dns dns_ali -d xiuey.com -d '*.xiuey.com' --debug 2
+acme.sh --issue --dns dns_ali -d xiuery.com -d '*.xiuery.com' --debug
+acme.sh --issue --dns dns_ali -d xiuery.com -d '*.xiuery.com' --debug 2
 ```
