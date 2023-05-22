@@ -21,8 +21,6 @@ nav:
     - ZeroTier: base/zerotier.md
     - Shadowsocks: base/shadowsocks.md
     - xpath: base/xpath.md
-    - Python: base/python.md
-    - Jupyter: base/jupyter.md
   - Devops:
     - Nginx: devops/nginx.md
     - Acme.sh: devops/acme.sh.md
@@ -42,12 +40,15 @@ nav:
     - Archery: db/archery.md
     - Metabase: db/metabase.md
     - ELK: db/elk.md
+  - Python:
+    - Python: python/python.md
+    - Jupyter: python/jupyter.md
   - PHP:
     - PHP: php/php.md
     - Homestead: php/homestead.md
     - Laravel7: php/laravel7.md
   - Java:
-    - Java: java/index.md
+    - Java: java/java.md
     - Maven: java/maven.md
     - Spring: java/spring.md
   - Docker:
@@ -55,9 +56,9 @@ nav:
     - Docker-compose: docker/docker-compose.md
     - Rancher: docker/rancher.md
     - Mesh: docker/mesh.md
-  - Standard:
-    - Restful: standard/restful.md
-    - RPC: standard/rpc.md
+  - Others:
+    - Restful: others/restful.md
+    - RPC: others/rpc.md
 
 theme:
     name: readthedocs

@@ -76,7 +76,8 @@ ss -lnt
 # 查看占用端口的pid
 lsof -i:80
 ps -ef | grep pid#
-netstat -tunlp |grep 3306
+netstat -tunlp | grep 3306
+netstat -apn | grep 3306
 ```
 
 #### 排序命令
