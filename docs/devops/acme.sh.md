@@ -157,6 +157,11 @@ server {
 }
 ```
 
+#### 查看已安装证书信息
+```
+acme.sh --info -d xiuery.com
+```
+
 #### 更新证书
 ```
 crontab -l
@@ -209,15 +214,20 @@ services:
     restart: always
     env_file:
       - .env
+    volumes:
+      - ./acmeout:/acme.sh
 ```
 
-- command
+- Commands inside the container
 ```
 # 启动
 docker-compose -f docker-compose.yml up -d
 
 # 进入容器
 docker exec -ti acme.sh sh
+
+# 查看已安装的证书
+acme.sh --info -d xiuery.com
 
 # 注册账户
 acme.sh --register-account -m xiuery.com@gmail.com
@@ -226,8 +236,74 @@ acme.sh --register-account -m xiuery.com@gmail.com
 
 # 泛域名
 acme.sh --issue --dns dns_ali -d xiuery.com -d *.xiuery.com
+# In dns mode, after the dns record is added, acme.sh will use cloudflare public dns or google dns to check if the record has taken effect.
+acme.sh --issue --dns dns_ali -d xiuery.com -d *.xiuery.com --dnssleep 300
+
+# 安装证书
+acme.sh --installcert -d xiuery.com \
+--key-file /acme.sh/xiuery.com/key.pem  \
+--fullchain-file /acme.sh/xiuery.com/cert.pem
 
 # debug
 acme.sh --issue --dns dns_ali -d xiuery.com -d '*.xiuery.com' --debug
 acme.sh --issue --dns dns_ali -d xiuery.com -d '*.xiuery.com' --debug 2
+```
+
+#### [Deploy to docker containers](https://github.com/acmesh-official/acme.sh/wiki/deploy-to-docker-containers)
+Deploy certs from a container to another container
+
+- Run the target container with a label
+```
+version: '3.9'
+
+services:
+  web:
+    image: harbor.xiuery.com/library/nginx:1.22
+    container_name: nginx1-22
+    hostname: nginx1-22
+    restart: always
+    labels:
+      - sh.acme.autoload.domain=xiuery.com
+    ports:
+      - "9500:80"
+    environment:
+      - NGINX_PORT=80
+```
+
+- Run acme.sh in a container
+```
+version: '3.4'
+services:
+  acme.sh:
+    image: localhost:8002/devops/acme.sh:3.0.5
+    container_name: acme.sh
+    hostname: acme.sh
+    command: daemon
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./acmeout:/acme.sh
+      - /var/run/docker.sock:/var/run/docker.sock 
+    environment:
+      - DEPLOY_DOCKER_CONTAINER_LABEL=sh.acme.autoload.domain=xiuery.com
+      - DEPLOY_DOCKER_CONTAINER_KEY_FILE=/etc/nginx/ssl/xiuery.com/key.pem
+      - DEPLOY_DOCKER_CONTAINER_CERT_FILE="/etc/nginx/ssl/xiuery.com/cert.pem"
+      - DEPLOY_DOCKER_CONTAINER_CA_FILE="/etc/nginx/ssl/xiuery.com/ca.pem"
+      - DEPLOY_DOCKER_CONTAINER_FULLCHAIN_FILE="/etc/nginx/ssl/xiuery.com/full.pem"
+      - DEPLOY_DOCKER_CONTAINER_RELOAD_CMD="service nginx force-reload"
+```
+
+- Let's issue a cert
+```
+docker exec acme.sh --info -d xiuery.com
+
+docker exec acme.sh --register-account -m xiuery.com@gmail.com
+
+docker exec acme.sh --issue --dns dns_ali -d xiuery.com -d *.xiuery.com
+# 上面命令经常检查dns失败, --dnssleep跳过检查
+docker exec acme.sh --issue --dns dns_ali -d xiuery.com -d *.xiuery.com --dnssleep 300
+
+# 部署生效
+docker exec acme.sh --deploy -d xiuery.com  --deploy-hook docker
 ```
