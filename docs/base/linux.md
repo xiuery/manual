@@ -80,6 +80,26 @@ netstat -tunlp | grep 3306
 netstat -apn | grep 3306
 ```
 
+#### 端口列表
+| service        | service                                              | port	  |
+|----------------|------------------------------------------------------|--------|
+|                | [xiuery.com ](https://xiuery.com)                    | 80     |
+| wordpress      | [wp.xiuery.com](https://wp.xiuery.com)               | 80     |
+| ssh            | [ssh.xiuery.com](https://ssh.xiuery.com)             | 2222   |
+| ssh            | [ssh2.xiuery.com](https://ssh2.xiuery.com)           | 9999   |
+| archery        | [archery.xiuery.com](https://archery.xiuery.com)     | 9123   |
+| manual         | [manual.xiuery.com](https://manual.xiuery.com)       | 8100   |
+| filebrowser    | [file.xiuery.com](https://file.xiuery.com)           | 8200   |
+| nexus          | [nexus.xiuery.com](https://nexus.xiuery.com)         | 8000   |
+| docker         | [docker.xiuery.com](https://docker.xiuery.com)       | 8001   |
+| harbor         | [harbor.xiuery.com](https://harbor.xiuery.com)       | 8002   |
+| chrome         | [chrome.xiuery.com](https://chrome.xiuery.com)       | 7900   |
+| chrome session | [chrome-ss.xiuery.com](https://chrome-ss.xiuery.com) | 4444   |
+| metabase       | [mb.xiuery.com](https://mb.xiuery.com)               | 3000   |
+| jupyter        | [jupyter.xiuery.com](https://jupyter.xiuery.com)     | 8300   |
+| gitlab         | [gitlab.xiuery.com](https://gitlab.xiuery.com)       | 8929   |
+
+
 #### 排序命令
 ```
 # ls排序
