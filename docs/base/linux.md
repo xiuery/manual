@@ -95,7 +95,7 @@ netstat -apn | grep 3306
 | harbor         | [harbor.xiuery.com](https://harbor.xiuery.com)       | 8002   |
 | chrome         | [chrome.xiuery.com](https://chrome.xiuery.com)       | 7900   |
 | chrome session | [chrome-ss.xiuery.com](https://chrome-ss.xiuery.com) | 4444   |
-| metabase       | [mb.xiuery.com](https://mb.xiuery.com)               | 3000   |
+| metabase       | [metabase.xiuery.com](https://metabase.xiuery.com)   | 3000   |
 | jupyter        | [jupyter.xiuery.com](https://jupyter.xiuery.com)     | 8300   |
 | gitlab         | [gitlab.xiuery.com](https://gitlab.xiuery.com)       | 8929   |
 

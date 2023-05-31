@@ -33,6 +33,11 @@ nav:
     - Nexus: devops/nexus.md
     - Harbor: devops/harbor.md
     - Jenkins: devops/jenkins.md
+  - Docker:
+    - Docker: docker/docker.md
+    - Docker-compose: docker/docker-compose.md
+    - Rancher: docker/rancher.md
+    - Mesh: docker/mesh.md
   - DB:
     - Mysql: db/mysql.md
     - Redis: db/redis.md
@@ -51,11 +56,6 @@ nav:
     - Java: java/java.md
     - Maven: java/maven.md
     - Spring: java/spring.md
-  - Docker:
-    - Docker: docker/docker.md
-    - Docker-compose: docker/docker-compose.md
-    - Rancher: docker/rancher.md
-    - Mesh: docker/mesh.md
   - Others:
     - Restful: others/restful.md
     - RPC: others/rpc.md
