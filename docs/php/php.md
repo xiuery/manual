@@ -47,6 +47,32 @@ location ~ \.php$ {
 }
 ```
 
+- windows启动脚本
+```
+# 下载http://redmine.lighttpd.net/attachments/660/RunHiddenConsole.zip
+
+@ECHO OFF
+
+SET RunHiddenConsole=C:\tools\RunHiddenConsole\RunHiddenConsole.exe
+SET PHP_HOME=C:\Program Files\php-5.6.40-nts
+SET NGINX_HOME=C:\Program Files\nginx-1.14.2
+
+ECHO Starting PHP FastCGI(%PHP_HOME%)...
+"%PHP_HOME%\php.exe" -v
+%RunHiddenConsole% "%PHP_HOME%\php-cgi.exe" -b 127.0.0.1:9000
+ECHO Running PHP FastCGI
+
+TIMEOUT /T 1
+
+ECHO Starting Nginx(%NGINX_HOME%)...
+CD "%NGINX_HOME%"
+"%NGINX_HOME%\nginx.exe" -v
+%RunHiddenConsole% "%NGINX_HOME%\nginx.exe"
+ECHO Running Nginx
+
+TIMEOUT /T 10
+```
+
 #### composer
 ```
 # Linux / Unix / macOS
